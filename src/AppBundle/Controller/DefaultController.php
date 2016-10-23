@@ -42,4 +42,20 @@ class DefaultController extends Controller
         // replace a example of D3JS piechart
         return $this->render('default/linechart.html.twig');
     }
+    /**
+     * @Route("examples/simplelinechart", name="simplelinechart")
+     */
+    public function simplelinechartAction(Request $request)
+    {
+        // replace a example of D3JS piechart
+        return $this->render('default/simplelinechart.html.twig');
+    }
+    /**
+     * @Route("examples/scalinglinechart", name="scalinglinechart")
+     */
+    public function scalinglinechartAction(Request $request)
+    {
+        // replace a example of D3JS piechart
+        return $this->render('default/scalinglinechart.html.twig');
+    }
 }
