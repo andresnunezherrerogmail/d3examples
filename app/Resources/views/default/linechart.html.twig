@@ -41,11 +41,11 @@
 <script src="{{ asset('javascript/dsLinechart1.js') }}"></script>
 <script>
     dsLineChart();
-    setInterval(removeChart, 1500);
-//    d3.select("p")
-//            .on("click", function() {
-//                removeChart();
-//            });
+//    setInterval(removeChart, 1500);
+    d3.select("p")
+            .on("click", function() {
+                removeChart();
+            });
 </script>
 
 {% endblock %}
