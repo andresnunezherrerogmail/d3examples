@@ -91,22 +91,20 @@ function dsLineChart(){
 
     //});
 
+
 }
 function removeChart(){
-
+alert("asd");
     // Set the dimensions of the canvas / graph
     var margin = {top: 30, right: 20, bottom: 30, left: 50},
         width = 600 - margin.left - margin.right,
         height = 270 - margin.top - margin.bottom;
 
-// Parse the date / time
-
-
-// Set the ranges
+//// Set the ranges
     var x = d3.time.scale().range([0, width]);
     var y = d3.scale.linear().range([height, 0]);
-
-// Define the axes
+//
+//// Define the axes
     var xAxis = d3.svg.axis().scale(x)
         .orient("bottom").ticks(5);
 
@@ -118,8 +116,8 @@ function removeChart(){
         d.close = +d.close;
         d.close1 = +d.close1;
     });
-
-// Define the line
+//
+//// Define the line
     var valueline = d3.svg.line()
         .x(function(d) { return x(d.date); })
         .y(function(d) { return y(d.close); });
@@ -127,12 +125,12 @@ function removeChart(){
     var valueline2 = d3.svg.line()
         .x(function(d) { return x(d.date); })
         .y(function(d) { return y(d.close1); });
-
-    // Scale the range of the data
+//
+//    // Scale the range of the data
     x.domain(d3.extent(data2, function(d) { return d.date; }));
     y.domain([0, d3.max(data2, function(d) { return d.close1; })]);
-
-    var svg = d3.select("body").transition();
+//
+    var svg = d3.select("svg").transition();
     svg.selectAll(".line")   // change the line
         .duration(750)
         .attr("d", valueline(data2))
@@ -148,4 +146,16 @@ function removeChart(){
         .duration(750)
         .call(yAxis);
         //.attr("transform", "translate(" + 0 + ",10)");
+    //changeData();
 }
+//function changeData(){
+//    data2 = [
+//            {date: "1-May-12", close: 58.13, close1: 25.58},
+//            {date: "30-Apr-12", close: 45.98, close1: 57.58},
+//            {date: "27-Apr-12", close: 67.00, close1: 67.58},
+//            {date: "26-Apr-12", close: 79.70, close1: 83.58},
+//            {date: "25-Apr-12", close: 86.00, close1: 99.58},
+//            {date: "24-Apr-12", close: 65.48, close1: 88.58}
+//        ]
+//        ;
+//}
