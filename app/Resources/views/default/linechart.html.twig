@@ -24,7 +24,7 @@
 {% block body%}
     <body>
     <br>
-    <p>Click on this text to update the chart with new data values (once).</p>
+    <p>Click on the button to update the chart with new data values. <input type="button" value="Update" class="btn update btn-sm btn-primary"></p>
     <div class="row">
         <div class="col-md-5 col-lg-5" style="margin-left: 5px;" id="pieChart">
             <p class="col-xs-offset-1 col-md-offset-1"><ins><i>D3js LineChart</i></ins></p>
@@ -42,7 +42,8 @@
 <script>
     dsLineChart();
 //    setInterval(removeChart, 1500);
-    d3.select("p")
+//    d3.select("p")
+    d3.select(".update")
             .on("click", function() {
                 removeChart();
             });

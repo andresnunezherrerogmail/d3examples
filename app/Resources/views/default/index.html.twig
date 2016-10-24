@@ -1,18 +1,48 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
-<style>
-    body ul li{
-        list-style: none;
-    }
-</style>
+    <style>
+        body ul li {
+            list-style: none;
+        }
+    </style>
 {% endblock %}
 {% block body %}
     <body>
-    <ul>
-        <li><a href="{{ path('piechart') }}">PieChart</a></li>
-        <li><a href="{{ path('simplelinechart') }}">SimpleLineChart</a></li>
-        <li><a href="{{ path('linechart') }}">LineChart</a></li>
-        <li><a href="{{ path('scalinglinechart') }}">ScalingLineChart</a></li>
-    </ul>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <span>Simples</span> <span class="pull-right">Dinámicos</span>
+                <br>
+                <br>
+                <div class="row">
+                    <div style="clear:both" class="col-md-6 col-sm-6">
+                        <ul>
+                            <li><a class="pull-left" href="{{ path('piechart') }}">PieChart</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <ul>
+                            <li class="pull-right"><a href="{{ path('simplelinechart') }}">SimpleLineChart</a></li>
+                        </ul>
+                    </div>
+                    <br>
+                    <br>
+
+                    <div class="col-md-6 col-sm-6">
+                        <ul>
+                            <li class="pull-left"><a href="{{ path('linechart') }}">LineChart</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <ul>
+                            <li class="pull-right"><a href="{{ path('scalinglinechart') }}">ScalingLineChart</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </body>
 {% endblock %}
