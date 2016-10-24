@@ -61,6 +61,7 @@ function dsLineChart(){
     /*var */svg = d3.select("body")
         .append("svg")
         .data([data])
+        .attr("id", "chart")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
