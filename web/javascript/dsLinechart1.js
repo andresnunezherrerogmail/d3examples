@@ -144,35 +144,56 @@ function removeChart(){
 //
     var _svg = d3.select("svg").transition();
     /** Esto es parte de lo antiguo, funciona*/
-    _svg.selectAll(".line")   // change the line
-        .duration(750)
-        .attr("d", valueline(data))
-        ;
-    _svg.select(".line2")   // change the line
-        .duration(750)
-        .attr("d", valueline2(data));
-    /** Aquí empieza lo nuevo*/
-    //var lines = svg.selectAll(".line").data(data2).attr("class","line");
-    //
-    //lines.transition()//.duration(750)
-    //    .attr("d",valueline(data2))
-    //    //.style("stroke", function(){
-    //    //    return '#'+Math.floor(Math.random()*16777215).toString(16);
-    //    //})
+    //_svg.selectAll(".line")   // change the line
+    //    .duration(750)
+    //    .attr("d", valueline(data))
     //    ;
-    //
-    //// enter any new data
-    //lines.enter()
-    //    .append("path")
-    //    //.attr("class","line")
-    //    .attr("d",valueline(data2))
-    //    .style("stroke", function(){
-    //        return '#'+Math.floor(Math.random()*16777215).toString(16);
-    //    });
-    //
-    //// exit
-    //lines.exit()
-    //    .remove();
+    //_svg.select(".line2")   // change the line
+    //    .duration(750)
+    //    .attr("d", valueline2(data));
+    /** Aquí empieza lo nuevo*/
+    var lines = svg.selectAll(".line").data(data).attr("class","line");
+    var lines2 = svg.selectAll(".line2").data(data).attr("class","line2");
+
+    lines.transition()//.duration(750)
+        .attr("d",valueline(data))
+        .style("stroke", function(){
+            return '#'+Math.floor(Math.random()*16777215).toString(16);
+        })
+        ;
+
+    // enter any new data
+    lines.enter()
+        .append("path")
+        .attr("class","line")
+        .attr("d",valueline(data))
+        .style("stroke", function(){
+            return '#'+Math.floor(Math.random()*16777215).toString(16);
+        });
+
+    // exit
+    lines.exit()
+        .remove();
+    /////////////////
+    lines2.transition()//.duration(750)
+        .attr("d",valueline2(data))
+        .style("stroke", function(){
+            return '#'+Math.floor(Math.random()*16777215).toString(16);
+        })
+    ;
+
+    // enter any new data
+    lines2.enter()
+        .append("path")
+        .attr("class","line2")
+        .attr("d",valueline2(data))
+        .style("stroke", function(){
+            return '#'+Math.floor(Math.random()*16777215).toString(16);
+        });
+
+    // exit
+    lines2.exit()
+        .remove();
 
     /** Esto es parte de lo nuevo y antiguo*/
     _svg.select(".x.axis") // change the x axis
