@@ -17,7 +17,7 @@
             border-bottom-color: black;
             border-left-color: black;
             border-style: solid;
-            border-width: 1px 1px 1px 0;
+            border-width: 1px 0 1px 0;
         }
         .separadori {
             border-top-color: black;
@@ -25,7 +25,7 @@
             border-bottom-color: black;
             border-left-color: black;
             border-style: solid;
-            border-width: 1px 0 1px 0;
+            border-width: 1px 0 1px 1px;
         }
     </style>
 {% endblock %}
@@ -52,7 +52,6 @@
                     </div>
                     <br>
                     <br>
-
                     <div class="separadord col-md-6 col-sm-6">
                         <ul>
                             <li class="pull-left"><a href="{{ path('simplelinechart') }}">SimpleLineChart</a></li>
@@ -61,6 +60,18 @@
                     <div class="separadori col-md-6 col-sm-6">
                         <ul>
                             <li class="pull-right"><a href="{{ path('scalinglinechart') }}">ScalingLineChart</a></li>
+                        </ul>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="separadord col-md-6 col-sm-6">
+                        {#<ul>#}
+                            {#<li class="pull-right"><a href="{{ path('scalinglinechart') }}">ScalingLineChart</a></li>#}
+                        {#</ul>#}
+                    </div>
+                    <div class="separadori col-md-6 col-sm-6">
+                        <ul>
+                            <li class="pull-right"><a href="{{ path('scatterplot') }}">Scatterplot</a></li>
                         </ul>
                     </div>
                 </div>

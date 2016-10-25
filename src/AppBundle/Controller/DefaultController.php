@@ -58,4 +58,12 @@ class DefaultController extends Controller
         // replace a example of D3JS piechart
         return $this->render('default/scalinglinechart.html.twig');
     }
+    /**
+     * @Route("examples/scatterplot", name="scatterplot")
+     */
+    public function scatterplotAction(Request $request)
+    {
+        // replace a example of D3JS piechart
+        return $this->render('default/scatterplot.html.twig');
+    }
 }
